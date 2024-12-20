@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 
-
 export default function ArticleCard({ id, title, snippet, date, image }) {
   const router = useRouter();
 
@@ -19,7 +18,14 @@ export default function ArticleCard({ id, title, snippet, date, image }) {
   };
 
   const getImageUrl = (imageUrl) => {
-    return imageUrl || ' /images/image2.jpg'
+    return imageUrl || '/images/image2.jpg';
+  };
+
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + '...';
+    }
+    return text;
   };
 
   return (
@@ -70,7 +76,7 @@ export default function ArticleCard({ id, title, snippet, date, image }) {
         <Typography
           variant="h6"
           sx={{
-            backgroundColor: '#bb1919', 
+            backgroundColor: '#bb1919',
             color: 'white',
             padding: '10px',
             borderRadius: '5px',
@@ -79,7 +85,7 @@ export default function ArticleCard({ id, title, snippet, date, image }) {
             fontSize: { xs: '1rem', sm: '1.2rem' },
           }}
         >
-          {title}
+          {truncateText(title, 50)}
         </Typography>
 
         {/* Date */}
@@ -87,28 +93,37 @@ export default function ArticleCard({ id, title, snippet, date, image }) {
           variant="body2"
           color="text.secondary"
           gutterBottom
-          sx={{ marginTop: '8px' ,textAlign: 'center' }}
+          sx={{ marginTop: '8px', textAlign: 'center' }}
         >
           {date}
         </Typography>
 
-        {/* Snippet */}
-        <Typography variant="body1" sx={{ marginTop: '8px' ,textAlign: 'justify',
-            fontSize: { xs: '0.9rem', sm: '1rem' },}}>
-          {snippet}
+        {/* Truncated Snippet */}
+        <Typography
+          variant="body1"
+          sx={{
+            marginTop: '8px',
+            textAlign: 'justify',
+            fontSize: { xs: '0.9rem', sm: '1rem' },
+          }}
+        >
+          {truncateText(snippet, 120)}
         </Typography>
       </CardContent>
 
       {/* Read More Button */}
       <CardActions sx={{ justifyContent: 'center' }}>
-        <Button size="small" variant="contained"  onClick={handleReadMore}
-        sx={{
-            backgroundColor: '#bb1919', 
-      color: 'white',
+        <Button
+          size="small"
+          variant="contained"
+          onClick={handleReadMore}
+          sx={{
+            backgroundColor: '#bb1919',
+            color: 'white',
             fontSize: { xs: '0.8rem', sm: '0.9rem' },
             padding: { xs: '5px 10px', sm: '8px 16px' },
           }}
-          >
+        >
           Read More
         </Button>
       </CardActions>
