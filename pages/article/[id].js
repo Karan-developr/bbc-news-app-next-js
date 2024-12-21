@@ -28,10 +28,10 @@ export default function ArticlePage({ article }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={article.contentSnippet} />
         <meta name="keywords" content="BBC News, Article, Breaking News, World News" />
-        <link rel="canonical" href={`https://yourwebsite.com/article/${article.id}`} />
+        <link rel="canonical" href={`https://bbc-news-app-next-js.vercel.app/article/${article.id}`} />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.contentSnippet} />
-        <meta property="og:url" content={`https://yourwebsite.com/article/${article.id}`} />
+        <meta property="og:url" content={`https://bbc-news-app-next-js.vercel.app/article/${article.id}`} />
         <meta property="og:type" content="article" />
         {article.image && <meta property="og:image" content={article.image} />}
         <meta property="article:published_time" content={article.pubDate} />

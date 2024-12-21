@@ -49,6 +49,7 @@ export default function ArticleCard({ id, title, snippet, date, image }) {
           height="200"
           image={getImageUrl(image)}
           alt={title}
+          loading="lazy"
           sx={{
             objectFit: 'cover',
             width: '100%',

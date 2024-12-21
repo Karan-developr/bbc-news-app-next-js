@@ -13,10 +13,10 @@ export default function HomePage({ articles }) {
         <meta name="description" content="Get the latest breaking news and top stories from BBC. Explore world news, politics, technology, and more." />
         <meta name="keywords" content="BBC News, World News, Breaking News, Politics, Technology" />
         <meta name="author" content="BBC News Aggregator" />
-        <link rel="canonical" href="https://yourwebsite.com/" />
+        <link rel="canonical" href="https://bbc-news-app-next-js.vercel.app/" />
         <meta property="og:title" content="BBC News - Stay Updated with the Latest Headlines" />
         <meta property="og:description" content="Get the latest breaking news and top stories from BBC." />
-        <meta property="og:url" content="https://yourwebsite.com/" />
+        <meta property="og:url" content="https://bbc-news-app-next-js.vercel.app/" />
         <meta property="og:type" content="website" />
       </Head>
       <Container maxWidth="lg" sx={{ py: 4 }}>
